@@ -1,0 +1,85 @@
+
+.global-container{
+    display: flex;
+    width:100%;
+    flex-direction: column;
+    background-color:white;
+    align-items: center;
+    font:white;
+    padding: 40px;
+    border-radius: 20px;
+}
+.post-container{
+    display: flex;
+    gap: 1px;
+    flex-direction: column;
+    background-color:white;
+    border-radius: 12px;
+    width:70%;
+   margin-bottom: 20px;
+   color:white
+}
+.post-container .post-header {
+    padding: 12px;
+}
+.post-header {
+    display: flex;
+    grid-gap: 12px;
+    gap: 12px;
+    flex-wrap: wrap;
+    background-color:#7386D5;
+    color:black;
+    font-weight:bold;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+}
+.post-content{
+    padding: 12px;
+    background-color: #6d7fcc;
+}
+.post-toolbar {
+    display: flex;
+    grid-gap: 40px;
+    gap: 40px;
+    background-color:#7386D5;
+    border-top: white ;
+    color:black;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+}
+.author-avatar{
+    height:40px;
+    width:40px;
+    border-radius: 50%;
+}
+.post-toolbar .favorites-button {
+    border: none;
+    background: none;
+    cursor: pointer;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    grid-gap: 8px;
+    gap: 8px;
+    transition: .25s ease-in-out;
+}
+.post-toolbar .heart-button-icon{
+    width: 18px;
+    height: 18px;
+    transition: all .25s ease-in-out;
+    fill: #f05;
+}
+.post-toolbar .favorites-button-wrapper {
+    display: flex;
+    align-items: center;
+}
+.favorites-button-wrapper, .tags-wrapper{
+    display: flex;
+    align-items: center;
+    cursor:pointer;
+}
+
+
