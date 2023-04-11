@@ -1,7 +1,10 @@
 import React from "react";
+import { useAuth0 } from "@auth0/auth0-react";
 import './SideNav.css';
+//import LoginButton from "./Login";
 
 const SideNav=()=>{
+    const { user, isAuthenticated, isLoading,logout } = useAuth0();
     return(
         <div class="sidenav-wrapper">
         <nav id="sidebar">
@@ -27,12 +30,13 @@ const SideNav=()=>{
                     <a href="#">Contact</a>
                 </li>
             </ul>
-
             <ul class="list-unstyled CTAs">
                 <li>
-                    <a  class="download">Logout</a>
+                    <a  class="download" onClick={()=>logout({returnTo:window.location.origin})}>Logout</a>
                 </li>
             </ul>
+            
+            
         </nav>
 
         
