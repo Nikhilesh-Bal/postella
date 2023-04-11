@@ -7,8 +7,9 @@ const PostComponent = ({ movieInfo }) => {
     
       <div className="container" >
         <div className="grid grid-three-column">
-          {movieInfo.map((curVal, id) => {console.log(curVal);
+          {movieInfo.map((curVal, id) => {
             return <PostCard key={id} 
+            id={id}
             username={curVal.author.username} 
             img={curVal.author.image} 
             title={curVal.title}

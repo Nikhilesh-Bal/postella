@@ -1,12 +1,13 @@
-import React from "react";
+import React from 'react';
 import './PostCard.css';
-import {Link} from 'react-router-dom';
- const PostCard=({id,username,img,title,description,favoritesCount,tagCount})=>{
-   //console.log(myData); 
+import {useLocation} from 'react-router-dom';
+const ViewPost=()=>{
+    const location=useLocation();
+    const {username,img,description,favoritesCount,tagCount}=location.state;
+   // console.log(location.state);
     return(
         <>
-        <Link to={`/view/${id}`}  state={{username:username,img:img,description:description,favoritesCount:favoritesCount,tagCount:tagCount}}>
-         <div className="global-container">
+          <div className="global-container">
            <div className="post-container">
             <div className="post-header">
               <div className="author-avatar">
@@ -42,8 +43,7 @@ import {Link} from 'react-router-dom';
             </div>
            </div>
            </div>
-         </Link>
         </>
     );
 }
-export default PostCard;
+export default ViewPost;
