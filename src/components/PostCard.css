@@ -81,5 +81,8 @@
     align-items: center;
     cursor:pointer;
 }
+.post-container .comment-component{
+    width:100%
+}
 
 

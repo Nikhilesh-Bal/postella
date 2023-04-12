@@ -1,10 +1,14 @@
 import React from 'react';
 import './PostCard.css';
-import {useLocation} from 'react-router-dom';
+import Comment from './Comment';
+import {useLocation,useParams} from 'react-router-dom';
+
 const ViewPost=()=>{
     const location=useLocation();
     const {username,img,description,favoritesCount,tagCount}=location.state;
    // console.log(location.state);
+   // {id}=useParams();
+   //console.log(p);
     return(
         <>
           <div className="global-container">
@@ -40,6 +44,9 @@ const ViewPost=()=>{
                      </div>
                      <div className="tags-count">{tagCount}</div>
                  </div>
+            </div>
+            <div className='comment-component' style={{width:'100%', height:'100%'}}>
+               <Comment/>
             </div>
            </div>
            </div>

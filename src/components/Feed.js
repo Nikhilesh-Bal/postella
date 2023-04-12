@@ -13,7 +13,7 @@ const Feed = () => {
     const res = await axios(
       `https://api.realworld.io/api/articles?limit=10&offset=0&_page=${page}`
     );
-    //console.log(res);
+    console.log(res.data);
     const data = res.data.articles;
      //console.log(data);
     setCard((prev) => [...prev, ...data]);

@@ -1,11 +1,11 @@
 import React from "react";
 import './PostCard.css';
-import {Link} from 'react-router-dom';
+import {Link, useParams} from 'react-router-dom';
  const PostCard=({id,username,img,title,description,favoritesCount,tagCount})=>{
    //console.log(myData); 
     return(
         <>
-        <Link to={`/view/${id}`}  state={{username:username,img:img,description:description,favoritesCount:favoritesCount,tagCount:tagCount}}>
+        <Link to={`/view/${id}`} key={id} state={{username:username,img:img,description:description,favoritesCount:favoritesCount,tagCount:tagCount}}>
          <div className="global-container">
            <div className="post-container">
             <div className="post-header">
