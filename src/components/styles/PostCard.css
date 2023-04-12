@@ -1,7 +1,8 @@
 
 .global-container{
     display: flex;
-    width:100%;
+    width:80%;
+    margin-left: 10%;
     flex-direction: column;
     background-color:white;
     align-items: center;
@@ -15,8 +16,9 @@
     flex-direction: column;
     background-color:white;
     border-radius: 12px;
-    width:70%;
-   margin-bottom: 20px;
+    width:60%;
+   
+   margin-left: 0px;
    color:white
 }
 .post-container .post-header {

@@ -1,12 +1,13 @@
 import React from "react";
-import './PostCard.css';
+import './styles/PostCard.css';
 import {Link, useParams} from 'react-router-dom';
  const PostCard=({id,username,img,title,description,favoritesCount,tagCount})=>{
    //console.log(myData); 
     return(
         <>
+        <div className="global-container">
         <Link to={`/view/${id}`} key={id} state={{username:username,img:img,description:description,favoritesCount:favoritesCount,tagCount:tagCount}}>
-         <div className="global-container">
+                  
            <div className="post-container">
             <div className="post-header">
               <div className="author-avatar">
@@ -41,8 +42,9 @@ import {Link, useParams} from 'react-router-dom';
                  </div>
             </div>
            </div>
-           </div>
+           
          </Link>
+         </div>
         </>
     );
 }

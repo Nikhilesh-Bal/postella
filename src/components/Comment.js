@@ -1,7 +1,7 @@
 import React ,{useState}from "react";
 import {useSelector,useDispatch} from 'react-redux';
 import { addComment ,deleteComment} from "../actions";
-import "./Comment.css"
+import './styles/Comment.css';
 
 const Comment=()=>{
     const [inputData,setInputData]=useState('');

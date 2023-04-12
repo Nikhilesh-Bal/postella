@@ -1,13 +1,13 @@
 import React from "react";
 import PostCard from "./PostCard";
 
-const PostComponent = ({ movieInfo }) => {
+const PostComponent = ({ cardInfo }) => {
    // console.log(movieInfo);
   return (
     
-      <div className="container" >
-        <div className="grid grid-three-column">
-          {movieInfo.map((curVal, id) => {
+      <div className="container" style={{marginLeft:"80px"}} >
+        
+          {cardInfo.map((curVal, id) => {
             return <PostCard key={id} 
             id={id}
             username={curVal.author.username} 
@@ -17,7 +17,7 @@ const PostComponent = ({ movieInfo }) => {
             favoritesCount={curVal.favoritesCount}
             tagCount={curVal.tagList.length}  />;
           })}
-        </div>
+        
       </div>
     
   );

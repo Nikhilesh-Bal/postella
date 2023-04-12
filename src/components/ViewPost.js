@@ -1,5 +1,5 @@
 import React from 'react';
-import './PostCard.css';
+import './styles/PostCard.css';
 import Comment from './Comment';
 import {useLocation,useParams} from 'react-router-dom';
 

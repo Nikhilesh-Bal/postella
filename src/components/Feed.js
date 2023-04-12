@@ -1,23 +1,19 @@
 import React, { useState, useEffect } from "react";
 import axios from 'axios';
-import Loading from "./Loading";
 import PostComponent from "./PostComponent";
-import PostCard from "./PostCard";
-import SideNav from "./SideNav";
 const Feed = () => {
   const [card, setCard] = useState([]);
   const [page, setPage] = useState(1);
-  const [loading, setLoading] = useState(true);
 
   const getCardData = async () => {
     const res = await axios(
       `https://api.realworld.io/api/articles?limit=10&offset=0&_page=${page}`
     );
-    console.log(res.data);
+    //console.log(res.data);
     const data = res.data.articles;
      //console.log(data);
     setCard((prev) => [...prev, ...data]);
-    setLoading(false);
+
   };
 
   useEffect(() => {
@@ -33,7 +29,6 @@ const Feed = () => {
         window.innerHeight + document.documentElement.scrollTop + 1 >=
         document.documentElement.scrollHeight
       ) {
-        setLoading(true);
         setPage((prev) => prev + 1);
       }
     } catch (error) {
@@ -48,8 +43,7 @@ const Feed = () => {
 
   return (
     <>
-      <PostComponent movieInfo={card} />
-      
+      <PostComponent cardInfo={card} /> 
     </>
   );
 };
