@@ -2,7 +2,7 @@ import React from "react";
 import PostCard from "./PostCard";
 
 const PostComponent = ({ cardInfo }) => {
-   // console.log(movieInfo);
+   // console.log(cardInfo);
   return (
     
       <div className="container" style={{marginLeft:"80px"}} >

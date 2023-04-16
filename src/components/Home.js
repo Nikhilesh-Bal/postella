@@ -5,7 +5,7 @@ import { useAuth0 } from "@auth0/auth0-react";
 //import LoginButton from './Login';
 import './styles/Home.css';
 const Home=()=>{
-    const { user, isAuthenticated, isLoading,logout } = useAuth0();
+    const { isAuthenticated } = useAuth0();
     return(
     <>
       {isAuthenticated && <div className="home">

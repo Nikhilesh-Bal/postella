@@ -78,13 +78,20 @@
     display: flex;
     align-items: center;
 }
-.favorites-button-wrapper, .tags-wrapper{
+.favorites-button-wrapper, .tags-wrapper, .comment-wrapper{
     display: flex;
     align-items: center;
     cursor:pointer;
 }
-.post-container .comment-component{
+.post-container .comment-component {
     width:100%
 }
+.tags-button{
+    padding:0;
+    background-color:#7386D5;
+    border:none;
+    cursor:pointer
+}
+
 
 

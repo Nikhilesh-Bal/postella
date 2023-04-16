@@ -1,12 +1,17 @@
 import React from "react";
 import './styles/PostCard.css';
-import {Link, useParams} from 'react-router-dom';
- const PostCard=({id,username,img,title,description,favoritesCount,tagCount})=>{
-   //console.log(myData); 
+import {Link} from 'react-router-dom';
+import {useSelector} from 'react-redux';
+ const PostCard=({id,username,img,description,favoritesCount,tagCount})=>{
+   //console.log(tagList); 
+   //console.log(id);
+   const postId=id;
+   const list=useSelector((state)=>state.commentReducer.list.filter(list => list.postId === postId));
+  
     return(
         <>
         <div className="global-container">
-        <Link to={`/view/${id}`} key={id} state={{username:username,img:img,description:description,favoritesCount:favoritesCount,tagCount:tagCount}}>
+        <Link to={`/view/${id}`} key={id} state={{id:id,username:username,img:img,description:description,favoritesCount:favoritesCount,tagCount:tagCount}}>
                   
            <div className="post-container">
             <div className="post-header">
@@ -33,12 +38,20 @@ import {Link, useParams} from 'react-router-dom';
                     </div>
                  </div>
                  <div className="tags-wrapper">
-                     <div className="tags-button">
+                     <div className="tags-button" >
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-tag-fill" viewBox="0 0 16 16">
                               <path d="M2 1a1 1 0 0 0-1 1v4.586a1 1 0 0 0 .293.707l7 7a1 1 0 0 0 1.414 0l4.586-4.586a1 1 0 0 0 0-1.414l-7-7A1 1 0 0 0 6.586 1H2zm4 3.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
                         </svg>
                      </div>
                      <div className="tags-count">{tagCount}</div>
+                 </div>
+                 <div className="comment-wrapper">
+                    <div className="comment-icon">
+                       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-chat-fill" viewBox="0 0 16 16">
+                         <path d="M8 15c4.418 0 8-3.134 8-7s-3.582-7-8-7-8 3.134-8 7c0 1.76.743 3.37 1.97 4.6-.097 1.016-.417 2.13-.771 2.966-.079.186.074.394.273.362 2.256-.37 3.597-.938 4.18-1.234A9.06 9.06 0 0 0 8 15z"/>
+                       </svg>
+                    </div>
+                    <div className="comment-count">{list.length}</div>
                  </div>
             </div>
            </div>
